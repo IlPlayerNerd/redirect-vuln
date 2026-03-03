@@ -16,11 +16,12 @@
 
   if (redirectUrl) {
     try {
-      const url = new URL(redirectUrl);
+      //const url = new URL(redirectUrl);
        
         window.location.href = redirectUrl; 
       }
     } catch (e) {
+      document.body.innerHTML += "<p style='color:red;'>redirectUrl.</p>";
       document.body.innerHTML += "<p style='color:red;'>Invalid URL format.</p>";
     }
   }
@@ -29,3 +30,4 @@
 </body>
 
 </html>
+
