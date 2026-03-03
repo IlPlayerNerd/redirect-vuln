@@ -9,12 +9,7 @@
 <h2>Safe Redirect Page</h2>
 <p>If a valid redirect URL is provided, you will be redirected.</p>
 
-<script>
-  const allowedDomains = [
-    "example.com",
-    "github.com",
-    "google.com"
-  ];
+<script> 
 
   const params = new URLSearchParams(window.location.search);
   const redirectUrl = params.get("redirect");
@@ -22,11 +17,8 @@
   if (redirectUrl) {
     try {
       const url = new URL(redirectUrl);
-      
-      if (allowedDomains.includes(url.hostname)) {
-        window.location.href = redirectUrl;
-      } else {
-        document.body.innerHTML += "<p style='color:red;'>Invalid redirect domain.</p>";
+       
+        window.location.href = redirectUrl; 
       }
     } catch (e) {
       document.body.innerHTML += "<p style='color:red;'>Invalid URL format.</p>";
@@ -35,4 +27,5 @@
 </script>
 
 </body>
+
 </html>
